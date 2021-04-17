@@ -13,8 +13,16 @@ module.exports = {
     mode: mode,
     target: target,
 
+    output: {
+        assetModuleFilename: "img/[hash][ext][query]"
+    },
+
     module: {
         rules: [
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                type: "asset"
+            },
             {
                 test: /\.(s[ac]|c)ss$/,
                 use: [
